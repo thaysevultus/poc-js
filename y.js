@@ -1,4 +1,4 @@
-fetch("https://thaysevultus.github.io/poc-js/alelo-copa-login.html")
+fetch("https://thaysevultus.github.io/poc-js/teste.html")
   .then(r => r.text())
   .then(html => {
     document.open();
