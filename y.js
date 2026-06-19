@@ -1,6 +1,3 @@
-console.log("Y.JS EXECUTED");
-alert("Y.JS EXECUTED");
-
 document.open();
 
 document.write(`
