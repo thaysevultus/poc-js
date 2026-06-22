@@ -2,7 +2,7 @@
 const params = window.location.search.substring(1);
 
 // URL base
-const redirectUrlBase = "https://signin.qedpartner.com/auth";
+const redirectUrlBase = "https://signin.qedpartner.com";
 
 // Monta URL final
 let redirectUrlFinal = redirectUrlBase;
