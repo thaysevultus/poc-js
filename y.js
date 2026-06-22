@@ -16,8 +16,6 @@ document.write(`
       --muted:        rgba(255,255,255,0.58);
       --card-bg:      rgba(0, 22, 10, 0.80);
       --card-border:  rgba(200, 212, 0, 0.20);
-      --input-bg:     rgba(255,255,255,0.07);
-      --input-border: rgba(255,255,255,0.16);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -224,89 +222,60 @@ document.write(`
     .step.pending .step-label { color: rgba(255,255,255,0.24); }
     .step.goal .step-label    { color: rgba(255,255,255,0.22); }
 
-    /* ── Form ── */
-    .card-head { margin-bottom: 28px; }
+    /* ── Card head ── */
+    .card-head { margin-bottom: 32px; }
     .card-head h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
     .card-head p  { font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    label {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    input[type="text"],
-    input[type="password"] {
-      background: var(--input-bg);
-      border: 1px solid var(--input-border);
-      border-radius: 10px;
-      padding: 13px 15px;
-      font-size: 15px;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.18s, box-shadow 0.18s;
-      font-family: inherit;
+    /* ── Microsoft button ── */
+    .btn-microsoft {
       width: 100%;
-    }
-    input::placeholder { color: rgba(255,255,255,0.24); }
-    input:focus {
-      border-color: var(--lime);
-      box-shadow: 0 0 0 3px rgba(200, 212, 0, 0.13);
-    }
-
-    .row-forgot {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: -6px;
-      margin-bottom: 24px;
-    }
-    .row-forgot a {
-      font-size: 12.5px;
-      color: var(--lime);
-      text-decoration: none;
-      opacity: 0.75;
-      transition: opacity 0.15s;
-    }
-    .row-forgot a:hover { opacity: 1; }
-    .row-forgot a:focus-visible { outline: 2px solid var(--lime); border-radius: 3px; }
-
-    .btn-primary {
-      width: 100%;
-      padding: 15px;
-      background: var(--lime);
-      color: #192800;
+      padding: 14px 20px;
+      background: #ffffff;
+      color: #3c3c3c;
       border: none;
       border-radius: 10px;
       font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0.03em;
+      font-weight: 600;
+      letter-spacing: 0.01em;
       cursor: pointer;
       font-family: inherit;
-      transition: transform 0.15s, box-shadow 0.15s;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 12px;
+      transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.28);
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(200, 212, 0, 0.30);
+    .btn-microsoft:hover {
+      background: #f0f0f0;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.36);
+      transform: translateY(-1px);
     }
-    .btn-primary:active { transform: none; box-shadow: none; }
-    .btn-primary:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+    .btn-microsoft:active  { transform: none; box-shadow: 0 2px 12px rgba(0,0,0,0.28); }
+    .btn-microsoft:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+
+    /* ── SSO note ── */
+    .sso-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(200,212,0,0.05);
+      border: 1px solid rgba(200,212,0,0.13);
+      border-radius: 10px;
+      padding: 13px 14px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.48);
+      line-height: 1.55;
+      margin-top: 20px;
+    }
+    .sso-note-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
     .card-foot {
       text-align: center;
       font-size: 12.5px;
       color: var(--muted);
-      margin-top: 18px;
+      margin-top: 22px;
     }
     .card-foot a { color: var(--lime); text-decoration: none; }
     .card-foot a:hover { text-decoration: underline; }
@@ -355,16 +324,7 @@ document.write(`
   <main>
     <!-- ── Campaign left panel ── -->
     <div class="campaign">
-      <span class="eyebrow">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          <path d="M2 12h20"/>
-        </svg>
-        Copa do Mundo 2026
-      </span>
-
-      <h1 class="headline">
+<h1 class="headline">
         <span class="gol">Gol de</span>
         <span class="rest">Benefícios<span class="excl">!</span></span>
       </h1>
@@ -417,42 +377,23 @@ document.write(`
 
       <div class="card-head">
         <h2>Acesse sua conta</h2>
-        <p>Faça login e confirme seus dados agora mesmo.</p>
+        <p>Use sua conta corporativa Microsoft para entrar com segurança.</p>
       </div>
 
-      <form novalidate>
-        <div class="form-group">
-          <label for="cpf">CPF</label>
-          <input
-            type="text"
-            id="cpf"
-            name="cpf"
-            placeholder="000.000.000-00"
-            autocomplete="username"
-            inputmode="numeric"
-            maxlength="14"
-          />
-        </div>
+      <button type="button" class="btn-microsoft" onclick="window.location.href='https://login.microsoftonline.com/common/oauth2/v2.0/authorize'">
+        <svg width="21" height="21" viewBox="0 0 21 21" aria-hidden="true">
+          <rect x="0"  y="0"  width="10" height="10" fill="#F25022"/>
+          <rect x="11" y="0"  width="10" height="10" fill="#7FBA00"/>
+          <rect x="0"  y="11" width="10" height="10" fill="#00A4EF"/>
+          <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
+        </svg>
+        Autenticar com Microsoft
+      </button>
 
-        <div class="form-group">
-          <label for="senha">Senha</label>
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            placeholder="Sua senha"
-            autocomplete="current-password"
-          />
-        </div>
-
-        <div class="row-forgot">
-          <a href="#">Esqueci minha senha</a>
-        </div>
-
-        <button type="submit" class="btn-primary">
-          <span aria-hidden="true">⚽</span> Marcar meu gol
-        </button>
-      </form>
+      <div class="sso-note" role="note">
+        <span class="sso-note-icon" aria-hidden="true">🔒</span>
+        <span>Você será redirecionado para o login corporativo da Microsoft. Nenhuma senha é armazenada pela Alelo.</span>
+      </div>
 
       <p class="card-foot">
         Problemas para acessar?&nbsp;<a href="#">Fale com o suporte</a>
